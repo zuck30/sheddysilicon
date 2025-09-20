@@ -1,0 +1,450 @@
+/* Cyberpunk Neon Background Effect */
+/* Futuristic cyberpunk atmosphere with neon grids, digital rain, and glitch effects */
+
+.cyberpunk-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.8;
+    background: radial-gradient(ellipse at center, rgba(0, 20, 40, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+/* Neon Grid System */
+.neon-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-pulse 4s ease-in-out infinite;
+}
+
+.neon-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 0, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 255, 0.05) 1px, transparent 1px);
+    background-size: 100px 100px;
+    animation: grid-pulse 6s ease-in-out infinite reverse;
+}
+
+/* Digital Rain Effect */
+.digital-rain {
+    position: absolute;
+    top: -100px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--primary-color, #00ff00);
+    text-shadow: 0 0 8px currentColor;
+    animation: matrix-fall linear infinite;
+    white-space: nowrap;
+    opacity: 0.7;
+}
+
+.digital-rain.neon-cyan {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.digital-rain.neon-pink {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+.digital-rain.neon-green {
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+/* Glitch Lines */
+.glitch-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        #ff00ff 20%, 
+        #00ffff 50%, 
+        #ff00ff 80%, 
+        transparent 100%);
+    animation: glitch-sweep 3s linear infinite;
+    opacity: 0.6;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+.glitch-line.fast {
+    animation-duration: 1.5s;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        #00ff00 20%, 
+        #ffff00 50%, 
+        #00ff00 80%, 
+        transparent 100%);
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Neon Particles */
+.neon-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--primary-color, #00ffff);
+    box-shadow: 
+        0 0 10px currentColor,
+        0 0 20px currentColor,
+        0 0 30px currentColor;
+    animation: particle-float 8s ease-in-out infinite;
+}
+
+.neon-particle.pink {
+    background: #ff00ff;
+    box-shadow: 
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff,
+        0 0 30px #ff00ff;
+}
+
+.neon-particle.cyan {
+    background: #00ffff;
+    box-shadow: 
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 30px #00ffff;
+}
+
+.neon-particle.green {
+    background: #00ff00;
+    box-shadow: 
+        0 0 10px #00ff00,
+        0 0 20px #00ff00,
+        0 0 30px #00ff00;
+}
+
+/* Circuit Lines */
+.circuit-line {
+    position: absolute;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        #00ffff 10%, 
+        #00ffff 90%, 
+        transparent 100%);
+    height: 1px;
+    animation: circuit-pulse 4s ease-in-out infinite;
+    opacity: 0.4;
+}
+
+.circuit-line::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #00ffff;
+    border-radius: 50%;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px #00ffff;
+    animation: circuit-node-pulse 2s ease-in-out infinite;
+}
+
+.circuit-line.vertical {
+    height: 200px;
+    width: 1px;
+    background: linear-gradient(0deg, 
+        transparent 0%, 
+        #ff00ff 10%, 
+        #ff00ff 90%, 
+        transparent 100%);
+}
+
+.circuit-line.vertical::before {
+    left: -3px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ff00ff;
+    box-shadow: 0 0 15px #ff00ff;
+}
+
+/* Holographic Overlay */
+.hologram-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 255, 255, 0.02) 2px,
+        rgba(0, 255, 255, 0.02) 4px
+    );
+    animation: hologram-scan 2s linear infinite;
+}
+
+/* Data Stream */
+.data-stream {
+    position: absolute;
+    width: 2px;
+    background: linear-gradient(0deg, 
+        transparent 0%, 
+        #00ff00 20%, 
+        #00ff00 80%, 
+        transparent 100%);
+    height: 100px;
+    animation: data-flow 3s linear infinite;
+    opacity: 0.6;
+    box-shadow: 0 0 8px #00ff00;
+}
+
+.data-stream.pink {
+    background: linear-gradient(0deg, 
+        transparent 0%, 
+        #ff00ff 20%, 
+        #ff00ff 80%, 
+        transparent 100%);
+    box-shadow: 0 0 8px #ff00ff;
+}
+
+/* Keyframe Animations */
+@keyframes grid-pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes matrix-fall {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+@keyframes glitch-sweep {
+    0% {
+        transform: translateY(-100vh) scaleX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(-50vh) scaleX(1);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(50vh) scaleX(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) scaleX(0);
+    }
+}
+
+@keyframes particle-float {
+    0%, 100% {
+        transform: translateY(0) translateX(0) scale(1);
+        opacity: 0.6;
+    }
+    25% {
+        transform: translateY(-30px) translateX(20px) scale(1.2);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-10px) translateX(-15px) scale(0.8);
+        opacity: 0.8;
+    }
+    75% {
+        transform: translateY(-40px) translateX(25px) scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes circuit-pulse {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scaleX(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scaleX(1.05);
+    }
+}
+
+@keyframes circuit-node-pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 1;
+    }
+}
+
+@keyframes hologram-scan {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes data-flow {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(calc(100vh + 100px));
+        opacity: 0;
+    }
+}
+
+/* Glitch effect for main content (optional) */
+.cyberpunk-glitch {
+    position: relative;
+}
+
+.cyberpunk-glitch::before,
+.cyberpunk-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: glitch-text 0.3s infinite linear alternate-reverse;
+}
+
+.cyberpunk-glitch::before {
+    color: #ff00ff;
+    animation-delay: -0.1s;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.cyberpunk-glitch::after {
+    color: #00ffff;
+    animation-delay: -0.2s;
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch-text {
+    0% {
+        transform: translateX(-2px);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(2px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-1px);
+        opacity: 1;
+    }
+}
+
+/* Theme Integration */
+[data-theme="dark"] .neon-grid {
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.15) 1px, transparent 1px);
+}
+
+[data-theme="light"] .cyberpunk-bg {
+    opacity: 0.4;
+}
+
+[data-theme="light"] .neon-grid {
+    background-image: 
+        linear-gradient(rgba(0, 150, 150, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 150, 150, 0.1) 1px, transparent 1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cyberpunk-bg {
+        opacity: 0.5;
+    }
+    
+    .neon-grid {
+        background-size: 30px 30px;
+    }
+    
+    .digital-rain {
+        font-size: 12px;
+    }
+    
+    .circuit-line {
+        opacity: 0.3;
+    }
+}
+
+@media (max-width: 480px) {
+    .cyberpunk-bg {
+        opacity: 0.3;
+    }
+    
+    .hologram-overlay {
+        display: none;
+    }
+    
+    .glitch-line {
+        display: none;
+    }
+}
+
+/* Performance Optimizations */
+.cyberpunk-bg * {
+    will-change: transform, opacity;
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .cyberpunk-bg *,
+    .cyberpunk-bg::before,
+    .cyberpunk-bg::after {
+        animation: none !important;
+    }
+    
+    .neon-grid,
+    .digital-rain,
+    .glitch-line,
+    .neon-particle,
+    .circuit-line,
+    .hologram-overlay,
+    .data-stream {
+        opacity: 0.3;
+    }
+}
