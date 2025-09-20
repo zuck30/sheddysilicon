@@ -41,18 +41,25 @@
     <!-- Floating Images Background -->
     <div class="floating-images" id="floatingImages"></div>
 
-    <!-- Enhanced Navbar -->
-    <nav class="navbar glass-intense" id="navbar">
-        <div class="flex items-center gap-6">
-            <!-- Logo -->
-            <a href="#" class="nav-item">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyofyNYiwBsJ7aX9NkStztx-xi-1tMAs8EAA&s" 
-                     alt="Logo" 
-                     class="w-12 h-12 rounded-full border-2 border-primary transition-all duration-300 hover:scale-110">
-            </a>
-            
+   <!-- Enhanced Navbar -->
+<nav class="navbar glass-intense" id="navbar">
+    <div class="flex items-center gap-6 navbar-content">
+        <!-- Logo -->
+        <a href="index.html" class="nav-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyofyNYiwBsJ7aX9NkStztx-xi-1tMAs8EAA&s" 
+                 alt="Logo" 
+                 class="w-12 h-12 rounded-full border-2 border-primary transition-all duration-300 hover:scale-110">
+        </a>
+        
+        <!-- Hamburger Menu Toggle -->
+        <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navigation Menu -->
+        <div class="nav-menu" id="navMenu">
             <!-- Navigation Items -->
-            <a href="#" class="nav-item active">
+            <a href="index.html" class="nav-item active">
                 <i class="fas fa-home"></i>
                 <span>Home</span>
             </a>
@@ -91,13 +98,14 @@
                 <span>Theme</span>
             </button>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <!-- Hidden Audio Element -->
-    <audio id="audio" preload="metadata">
-        <source src="/audio/Beyond_the_Bullet_Points__Unpacking_a_Young_Technologist_s_Self-Driven_Journey_from_Tanzania_to_Tech.m4a" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+<!-- Hidden Audio Element -->
+<audio id="audio" preload="metadata">
+    <source src="/audio/Beyond_the_Bullet_Points__Unpacking_a_Young_Technologist_s_Self-Driven_Journey_from_Tanzania_to_Tech.m4a" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
 
     <!-- Main Content -->
     <main class="min-h-screen flex items-center justify-center pt-32 pb-16 px-4">
