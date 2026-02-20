@@ -49,6 +49,7 @@
         <a href="#" class="nav-item">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyofyNYiwBsJ7aX9NkStztx-xi-1tMAs8EAA&s" 
                  alt="Logo" 
+                 loading="lazy"
                  class="w-12 h-12 rounded-full border-2 border-primary transition-all duration-300 hover:scale-110">
         </a>
         
@@ -103,7 +104,7 @@
 </nav>
 
 <!-- Hidden Audio Element -->
-<audio id="audio" preload="metadata">
+<audio id="audio" preload="none">
     <source src="/audio/Beyond_the_Bullet_Points__Unpacking_a_Young_Technologist_s_Self-Driven_Journey_from_Tanzania_to_Tech.m4a" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
@@ -259,7 +260,6 @@
         </div>
     </footer>
 
-    <script src="script.js">
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
