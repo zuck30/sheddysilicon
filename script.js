@@ -137,7 +137,7 @@
             }
 
             createFloatingImages() {
-                const imageCount = 7;
+                const imageCount = 4;
                 for (let i = 0; i < imageCount; i++) {
                     const img = document.createElement('img');
                     img.className = 'floating-img';
@@ -248,9 +248,7 @@
 
             init() {
                 window.addEventListener('load', () => {
-                    setTimeout(() => {
-                        this.hideLoading();
-                    }, 1500);
+                    this.hideLoading();
                 });
             }
 
@@ -315,7 +313,11 @@
             // Initialize all systems
             const themeManager = new ThemeManager();
             const audioPlayer = new AudioPlayer();
-            const floatingImages = new FloatingImages();
+
+            window.addEventListener('load', () => {
+                const floatingImages = new FloatingImages();
+            });
+
             const scrollProgress = new ScrollProgress();
             const navbarManager = new NavbarManager();
             const loadingManager = new LoadingManager();
