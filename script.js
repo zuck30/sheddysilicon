@@ -98,7 +98,7 @@
                 this.container = document.getElementById('floatingImages');
                 this.images = [
                     '/images/Mudathir.png',
-          '/images/sheddy.png',
+          '/images/profile.jpeg',
           '/images/zouzoua.png',
           '/images/zimbwe.png',
           '/images/ande_boyeli.png',
