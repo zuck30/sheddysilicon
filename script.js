@@ -137,7 +137,7 @@
             }
 
             createFloatingImages() {
-                const imageCount = 4;
+                const imageCount = this.images.length;
                 for (let i = 0; i < imageCount; i++) {
                     const img = document.createElement('img');
                     img.className = 'floating-img';
